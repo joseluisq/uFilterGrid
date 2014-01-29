@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+
+        <style>
+
+        </style>
+
+        <script src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+        <script src="uFilterGrid.js"></script>
+        <script type="text/javascript">
+            document.addEvent('domready', function() {
+                
+                // In action
+                var sortlist = $('sortlist');
+                var mg = new uFilterList(sortlist, {
+                    // you can set the margin in pixels
+                    margin: 5
+                });
+
+                // Filtering
+                var filter, links = $$('a');
+                links.addEvent('click', function() {
+                    if (!this.hasClass('active')) {
+
+                        // Retrieve the filter value
+                        filter = this.get('data-filter');
+                        // Filtering by retrieved value
+                        mg.filterBy(filter);
+
+                        links.removeClass('active');
+                        this.addClass('active');
+
+                        if (filter === 'all') {
+                            sortlist.removeClass('filtered');
+                        } else {
+                            sortlist.addClass('filtered');
+                        }
+                    }
+
+                });
+
+                // Trigger click event for first link
+                links[0].fireEvent('click');
+            });
+        </script>
+    </head>
+    <body>
+        <h1>My uFilterGrid Chessboard</h1>
+        <p>A simple grid list plugin for easy filter and sorting.</p>
+
+        <nav id="filters">
+            Filter by: 
+            <a href="javascript:;" data-filter="all">All</a> | 
+            <a href="javascript:;" data-filter="black">Black</a> | 
+            <a href="javascript:;" data-filter="white">White</a> | 
+            <a href="javascript:;" data-filter="first-line">First Line</a> | 
+            <a href="javascript:;" data-filter="second-line">Second Line</a> | 
+            <a href="javascript:;" data-filter="royalty">Royalty</a> | 
+            <a href="javascript:;" data-filter="infantry-black">Black Infantry</a> | 
+            <a href="javascript:;" data-filter="infantry-white">White Infantry</a> | 
+            <a href="javascript:;" data-filter="rooks">Rooks</a>
+        </nav>
+
+        <div id="chessboard">
+
+            <ul id="sortlist">
+
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+                <li data-filter="black second-line infantry-black">&#9823;</li>
+
+                <li data-filter="black first-line rooks">&#9820;</li>
+                <li data-filter="black first-line infantry-black">&#9822;</li>
+                <li data-filter="black first-line infantry-black">&#9821;</li>
+                <li data-filter="black first-line royalty">&#9819;</li>
+                <li data-filter="black first-line royalty">&#9818;</li>
+                <li data-filter="black first-line infantry-black">&#9821;</li>
+                <li data-filter="black first-line infantry-black">&#9822;</li>
+                <li data-filter="black first-line rooks">&#9820;</li>
+
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+                <li data-filter="empty"></li>
+
+                <li data-filter="white first-line rooks">&#9814;</li>
+                <li data-filter="white first-line infantry-white">&#9816;</li>
+                <li data-filter="white first-line infantry-white">&#9815;</li>
+                <li data-filter="white first-line royalty">&#9813;</li>
+                <li data-filter="white first-line royalty">&#9812;</li>
+                <li data-filter="white first-line infantry-white">&#9815;</li>
+                <li data-filter="white first-line infantry-white">&#9816;</li>
+                <li data-filter="white first-line rooks">&#9814;</li>
+
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+                <li data-filter="white second-line infantry-white">&#9817;</li>
+
+            </ul>
+
+        </div>
+    </body>
+</html>

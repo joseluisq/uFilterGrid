@@ -1,0 +1,8 @@
+name: uFilterGrid
+description: A simple grid list plugin for easy filter and sorting.
+author: joseluis_q
+category: Interface
+tags: [grid, sortlist, filter]
+current: 1.0
+license: MIT License
+demo: http://goo.gl/5cY8M1
