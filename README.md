@@ -50,7 +50,7 @@ Options :
 
 Public Methods :
     
-  * uFilterList.filterBy(string) = string it's text to filter, this indicate in li tags for the list.
+  * uFilterList.filterBy(string) = string it's text to filter, it should match to `data-filter` attribute on `li` tags. matching.
     
 Events :
 
