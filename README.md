@@ -2,7 +2,9 @@
 
 A simple Mootools grid list plugin for easy filter and sorting.
 
-**Note:** For better performance and new improvements it will recommended take a look at  [Sortboardjs](https://github.com/joseluisq/sortboardjs) project.
+**Note:** 
+
+For better performance and new improvements it will recommended take a look at  [Sortboardjs](https://github.com/joseluisq/sortboardjs) project.
 
 ## How to use
 
@@ -34,11 +36,6 @@ HMTL :
 ## Live Demo
 
 [See the live demo](http://goo.gl/5cY8M1)
-
-
-## Screenshots
-
-![Screenshot](http://joseluisquintana.pe/contribs/screenshots/ufilterlist.png)
 
 
 ## Reference
